@@ -1,44 +1,50 @@
-import { render } from "@testing-library/react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import song from "../audio/ost.mp3"
-
-let song = new Audio(song);
-song.play();
-song.pause();
 
 export default function PlaySong(){
     const [audio, setAudio] = useState(new Audio(song));
     const [isPlaying, setIsPlaying] = useState(false);
 
+  // useEffect(()=> {
+  //   setIsPlaying(true)
+  // },[])
+
   const playPause =() => {
-
-    let isPlaying = this.state.isPlaying;
-
     if (isPlaying) {
       audio.pause();
     } else {
-
       audio.play();
     }
 
-setIsPlaying()
+  setIsPlaying({playPause})
+  setAudio(song);
 
-    setState({ isPlaying: !isPlaying });
   };
 
- 
+  const stopSong = () => {
+
+    if (isPlaying){
+      audio.pause();
+      setAudio(audio.pause);
+    }
+    setIsPlaying(audio.pause)
+    setAudio(audio.pause);
+  }
     return (
       <div>
         <p>
-          {this.state.isPlaying ? 
+          {isPlaying ? 
             "Song is Playing" : 
             "Song is Paused"}
         </p>
 
         <button onClick={playPause}>
-          Play | Pause
+          Play 
         </button>
+        <button onClick={stopSong}>
+          Pause
+          </button>
       </div>
     );
   

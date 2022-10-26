@@ -1,0 +1,9 @@
+.Tela-Home-container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+     background: url(https://media.tenor.com/tiuXQ6lFYasAAAAC/japan-omgronny.gif) no-repeat ; 
+     background-size: cover;
+}
