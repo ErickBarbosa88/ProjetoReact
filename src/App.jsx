@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./screens/Home/Home";
 import Personalweb from "./screens/TelaPrincipal/Personalweb";
-import Todo from "./screens/Todo/todo";
+import Todo from "./screens/Todo/Todo";
 
 
 const App = () => {
@@ -11,8 +11,9 @@ const App = () => {
     <BrowserRouter>
     <Routes>
         <Route index element={<Home />} />
-        <Route path="todo" element={<Todo />} />
-        <Route path="TelaPrincipal" element={<Personalweb />} />
+        <Route path="/homeback" element={<Home />} />
+        <Route path="/todo" element={<Todo />} />
+        <Route path="/tela-principal" element={<Personalweb />} />
     </Routes>
   </BrowserRouter>
 );

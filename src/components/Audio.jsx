@@ -25,6 +25,8 @@ export default function PlaySong(){
   const stopSong = () => {
 
     if (isPlaying){
+      console.log('entrei aq')
+      console.log(audio, typeof(audio))
       audio.pause();
       setAudio(audio.pause);
     }
