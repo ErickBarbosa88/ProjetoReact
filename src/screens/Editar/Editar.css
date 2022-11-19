@@ -1,0 +1,27 @@
+h1,
+label {
+  color: white;
+}
+
+label {
+  margin-right: 10px;
+}
+
+.input-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.input-qualificacoes-container {
+  margin: 5px;
+  border: 1px solid rgba(128, 255, 0, 0.406);
+  padding: 10px;
+}
+.itens {
+  margin: 5px;
+  display: flex;
+}
+.itens p {
+  margin: 5px;
+}

@@ -2,18 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import PlaySong from "../../components/Audio";
-import "./Home.css"
-
+import "./Home.css";
 
 export default function Home() {
-    return (
-        <>
-        <div className="Tela-Home-container">
-            <Link to="/todo">Entrar</Link>
-            <PlaySong />   
-            
-        </div>
-        </>
-    )
-
+  return (
+    <>
+      <div className="Tela-Home-container">
+        <Link to="/tela-principal">Entrar</Link>
+        <PlaySong />
+      </div>
+    </>
+  );
 }
