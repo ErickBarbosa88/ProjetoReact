@@ -12,7 +12,7 @@ export default function Personalweb() {
         <div className="title">
           <h1>{nome}</h1>
           <Link to="/editar">
-            <strong>Editar</strong>
+          <button className="glow-on-hover">EDITAR</button>
           </Link>
         </div>
         <h3>Resumo</h3>
