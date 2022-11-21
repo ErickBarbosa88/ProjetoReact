@@ -35,10 +35,9 @@ export default function Personalweb() {
         </ul>
       </div>
       <Link to="/todo">
-        <p className="link-todo-container">
-          Clique aqui para ver um TODO-List muito legal
-        </p>
+      <button className="glow-on-hover">CLIQUE PARA VER UM TODO-LIST</button>
       </Link>
+        <Link to="/homeback"><button className="glow-on-hover">VOLTAR</button></Link>
     </div>
   );
 }

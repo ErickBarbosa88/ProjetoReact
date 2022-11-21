@@ -35,8 +35,7 @@ export default function PlaySong() {
     <div>
       <p>{isPlaying ? "Song is Playing" : "Song is Paused"}</p>
 
-      <button onClick={playPause}>Play</button>
-      <button onClick={stopSong}>Pause</button>
+      <button className="glow-on-hover" onClick={playPause}>Play</button>
     </div>
   );
 }

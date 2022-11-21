@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import { Link } from "react-router-dom";
+
 
 import "./todo.css";
 import AddTask from '../../components/AddTask/AddTask';
@@ -7,6 +9,7 @@ import Tasks from '../../Tasks/tasks';
 
 
 export default function Todo() {
+
   
 const [tasks, setTasks] = useState([
   {
@@ -54,6 +57,14 @@ return (
           <Tasks tasks={tasks} handleTaskClick={handleTaskClick}
           handleTaskDeletion={handleTaskDeletion}/>
       </div>
+
+      <div>
+<Link to="/tela-principal"><button className="glow-on-hover">Voltar</button></Link>
+
+</div>
     </>
+    
 );
+
+
 }

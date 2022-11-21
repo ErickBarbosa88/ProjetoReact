@@ -7,6 +7,11 @@ import Qualificacao from "./components/Qualificacoes";
 import "./Editar.css";
 
 export default function Editar() {
+
+function salvar(){
+
+}
+
   const {
     nome,
     setNome,
@@ -76,7 +81,7 @@ export default function Editar() {
           </Button>
         </div>
         <Link to="/tela-principal">
-          <p className="salvar-curriculu-container">SALVAR</p>
+          <button className="glow-on-hover">SALVAR</button>
         </Link>
       </div>
     </div>
