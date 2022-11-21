@@ -29,3 +29,7 @@ h3 {
   display: flex;
   max-width: 800px;
 }
+
+.link-todo-container {
+  color: white;
+}

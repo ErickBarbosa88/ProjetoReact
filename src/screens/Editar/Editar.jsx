@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Button from "../../components/Button/Button";
 import { useCurriculo } from "../../context/useCurriculo";
 import Historico from "./components/Historico";
@@ -5,8 +7,17 @@ import Qualificacao from "./components/Qualificacoes";
 import "./Editar.css";
 
 export default function Editar() {
-  const { nome, setNome, resumo, setResumo, qualificacoes, historicos } =
-    useCurriculo();
+  const {
+    nome,
+    setNome,
+    resumo,
+    setResumo,
+    qualificacoes,
+    setQualificacoes,
+    historicos,
+    setHistoricos,
+  } = useCurriculo();
+
   return (
     <div className="container">
       <div className="add-task-container input-container">
@@ -39,7 +50,13 @@ export default function Editar() {
           })}
         </div>
         <div className="add-task-button-container">
-          <Button onClick={() => {}}>Adicionar Qualificacao</Button>
+          <Button
+            onClick={() => {
+              setQualificacoes([...qualificacoes, ""]);
+            }}
+          >
+            Adicionar Qualificacao
+          </Button>
         </div>
       </div>
       <div>
@@ -49,6 +66,18 @@ export default function Editar() {
             return <Historico item={historico} />;
           })}
         </div>
+        <div className="add-task-button-container">
+          <Button
+            onClick={() => {
+              setHistoricos([...qualificacoes, ""]);
+            }}
+          >
+            Adicionar Historico
+          </Button>
+        </div>
+        <Link to="/tela-principal">
+          <p className="salvar-curriculu-container">SALVAR</p>
+        </Link>
       </div>
     </div>
   );

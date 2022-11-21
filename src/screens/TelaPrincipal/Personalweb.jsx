@@ -7,6 +7,7 @@ export default function Personalweb() {
   const { nome, resumo, qualificacoes, historicos } = useCurriculo();
   return (
     <div className="tela-principal-container">
+      <h1>Clique em Editar para fazer seu Curriculo</h1>
       <div className="container">
         <div className="title">
           <h1>{nome}</h1>
@@ -19,47 +20,25 @@ export default function Personalweb() {
 
         <h3>Qualificações</h3>
         <div>
-          <div>
-            {qualificacoes.map((qualificacao) => {
-              console.log(qualificacao);
-              return (
-                <div>
-                  <h4>{qualificacao.title}</h4>
-                  <ul>
-                    {qualificacao.itens.map((item) => {
-                      return <li>{item}</li>;
-                    })}
-                  </ul>
-                </div>
-              );
+          <ul>
+            {qualificacoes.map((item) => {
+              return <li>{item}</li>;
             })}
-          </div>
+          </ul>
         </div>
 
         <h3>Histórico profissional</h3>
-        <div>
-          {historicos.map((historico) => {
-            return (
-              <div className="historico-container">
-                <div>
-                  <p>
-                    {historico.inicio} - {historico.fim}
-                  </p>
-                  <strong>{historico.cargo}</strong>
-                  <p>{historico.local}</p>
-                </div>
-                <div>
-                  <ul>
-                    {historico.tarefas.map((tarefa) => {
-                      return <li>{tarefa}</li>;
-                    })}
-                  </ul>
-                </div>
-              </div>
-            );
+        <ul>
+          {historicos.map((tarefa) => {
+            return <li>{tarefa}</li>;
           })}
-        </div>
+        </ul>
       </div>
+      <Link to="/todo">
+        <p className="link-todo-container">
+          Clique aqui para ver um TODO-List muito legal
+        </p>
+      </Link>
     </div>
   );
 }

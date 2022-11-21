@@ -1,27 +1,30 @@
 import { useCurriculo } from "../../../context/useCurriculo";
+import Input from "./Input";
 
 export default function Qualificacao({ item }) {
   const { qualificacoes, setQualificacoes } = useCurriculo();
 
-  function remove() {
-    setQualificacoes(
-      qualificacoes.filter((qualificacao) => qualificacao.id != item.id)
-    );
+  function remover() {
+    const index = qualificacoes.indexOf(item);
+    const novalista = qualificacoes;
+    novalista.splice(index, 1);
+    setQualificacoes([...novalista]);
   }
+
   return (
     <div className="input-qualificacoes-container">
-      <div className="title">
-        <label>Titulo:</label>
-        <input value={item.title} className="add-task-input" />
-      </div>
-      {item.itens.map((itemLista) => {
-        return (
-          <div className="itens">
-            <input value={itemLista} className="add-task-input" />
-          </div>
-        );
-      })}
-      <p onClick={() => remove()}>Excluir</p>
+      <Input
+        value={item}
+        onChange={(text) => {
+          const index = qualificacoes.indexOf(item);
+          let novalista = [...qualificacoes];
+          novalista[index] = text;
+          setQualificacoes(novalista);
+          console.log(novalista);
+        }}
+      />
+
+      <p onClick={() => remover()}>Excluir</p>
     </div>
   );
 }
